@@ -2,29 +2,20 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
+import PropertyListing from './components/PropertyListing.vue'
 </script>
 
 <template>
-  <div class="">
+  <div class="snapper">
     <div
-      class="flex flex-col justify-between h-screen w-full bg-[url('./assets/kumtano.jpg')] bg-cover"
+      class="flex flex-col justify-between h-screen w-full bg-[url('./assets/kumtano.jpg')] bg-cover snap-center"
     >
       <Header />
       <Footer />
     </div>
-    <div class="h-screen w-max-[1280px]">
-      <div class="mx-12 mt-12">
-        <div class="">
-          <span class="block text-4xl">Latest on the </span>
-          <span class="text-4xl">Property Listing</span>
-          <hr class="w-24 border-2 border-black mt-4" />
-        </div>
-        <div class="flex flex-row">
-          <div class="basis-1/4 bg-slate-400 h-80 mr-4">hey</div>
-          <div class="basis-1/4 bg-slate-400 h-80 mr-4">hey</div>
-          <div class="basis-1/4 bg-slate-400 h-80 mr-4">hey</div>
-          <div class="basis-1/4 bg-slate-400 h-80">hey</div>
-        </div>
+    <div class="h-screen w-full snap-center">
+      <div class="h-screen max-w-[1280px] mx-auto">
+        <PropertyListing />
       </div>
     </div>
   </div>
@@ -38,4 +29,9 @@ import Header from './components/Header.vue'
 /* .dene:focus {
   border
 } */
+
+.snapper {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
 </style>
